@@ -1,4 +1,4 @@
-package com.cyl.mybatisplus.config;
+package com.cyl.mybatisplus.controller;
 
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
