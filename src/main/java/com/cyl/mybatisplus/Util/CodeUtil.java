@@ -1,14 +1,11 @@
-package com.cyl.mybatisplus.controller;
+package com.cyl.mybatisplus.Util;
 
-import com.cyl.mybatisplus.pojo.result.Result;
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
@@ -19,11 +16,9 @@ import java.awt.image.BufferedImage;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-@RestController
-public class CodeController {
+public class CodeUtil {
     //验证码的有效时间:ms
     private static final Long SESSION_TIMEOUT = 60 * 1000L;
-
 
     @Autowired
     private Producer captchaProducer ;
@@ -59,7 +54,7 @@ public class CodeController {
      */
     @GetMapping("/code/check")
     public Boolean checkCode(@RequestParam(value = "code", required = true) String code,
-                                     HttpSession session){
+                             HttpSession session){
 
         String trueCode = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
         Date firstTime = (Date) session.getAttribute(Constants.KAPTCHA_SESSION_DATE);
@@ -72,5 +67,4 @@ public class CodeController {
             return false;
         return true;
     }
-
 }

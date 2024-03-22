@@ -26,6 +26,7 @@ spring:
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 300000
       filters: stat,wall,slf4j
+
     ############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
     sa-token:
       # token 名称（同时也是 cookie 名称）
@@ -42,6 +43,20 @@ spring:
       token-style: uuid
       # 是否输出操作日志
       is-log: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    # 根据自己设置的密码决定
+    timeout: 6000
+    # 操作0号数据库，默认有16个数据库
+    database: 0
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
 
 
 ############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
@@ -60,6 +75,23 @@ sa-token:
   token-style: uuid
   # 是否输出操作日志
   is-log: true
+
+
+#kaptcha:
+#  image:
+#    width: 100
+#    height: 60
+#  textproducer:
+#    font:
+#      size: 33
+#  items:
+#    # home captcha
+#    admin:
+#      path: /getCode
+#      session:
+#        key:  CODE_SESSION_KEY
+#        time: CODE_SESSION_TIME
+
 
 
 # 配置MyBatis日志
