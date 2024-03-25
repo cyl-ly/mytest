@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <spring-boot.version>2.6.13</spring-boot.version>
+        <spring-boot.version>2.5.4</spring-boot.version>
     </properties>
     <dependencies>
         <dependency>
@@ -63,8 +63,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
 <!--            <version>3.2.0</version>-->
         </dependency>
-
-
         <!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
         <dependency>
             <groupId>cn.dev33</groupId>
@@ -78,6 +76,18 @@
             <artifactId>persistence-api</artifactId>
             <version>1.0</version>
         </dependency>
+        <!--使用RestTemplate 依赖-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-web</artifactId>-->
+<!--            <version>5.2.2.RELEASE</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.httpcomponents</groupId>-->
+<!--            <artifactId>httpclient</artifactId>-->
+<!--            <version>4.5.7</version>-->
+<!--        </dependency>-->
+
 
 
 

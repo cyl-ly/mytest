@@ -28,8 +28,8 @@ public class CodeController {
     @Autowired
     private Producer captchaProducer ;
 
-    /*
-    验证码请求接口
+    /**
+    * 验证码请求接口
      */
     @RequestMapping("/code/get")
     public void getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -72,5 +72,4 @@ public class CodeController {
             return false;
         return true;
     }
-
 }

@@ -1,5 +1,5 @@
 server:
-  port: 8889
+  port: 8000
 
 spring:
     # 配置数据源信息
@@ -76,25 +76,12 @@ sa-token:
   # 是否输出操作日志
   is-log: true
 
-
-#kaptcha:
-#  image:
-#    width: 100
-#    height: 60
-#  textproducer:
-#    font:
-#      size: 33
-#  items:
-#    # home captcha
-#    admin:
-#      path: /getCode
-#      session:
-#        key:  CODE_SESSION_KEY
-#        time: CODE_SESSION_TIME
-
-
-
 # 配置MyBatis日志
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+# RestTemplate请求路径配置
+rest:
+  getUsers: http://127.0.0.1:8000/Rest/getUsers
